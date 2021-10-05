@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huckops.github.io/2021/09/04/%E5%9F%BA%E4%BA%8EK8S%E7%9A%84LNMP%E6%9E%B6%E6%9E%84%EF%BC%88HPA%EF%BC%89/</loc>
+    
+    <lastmod>2021-10-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huckops.github.io/categories/index.html</loc>
     
     <lastmod>2021-10-05</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://huckops.github.io/2021/09/12/K8S%E6%BA%90%E7%A0%81%E6%9E%84%E5%BB%BA/</loc>
     
     <lastmod>2021-09-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://huckops.github.io/2021/10/05/%E5%9F%BA%E4%BA%8EK8S%E7%9A%84LNMP%E6%9E%B6%E6%9E%84%EF%BC%88HPA%EF%BC%89/</loc>
-    
-    <lastmod>2021-09-11</lastmod>
     
   </url>
   
