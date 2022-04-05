@@ -6,7 +6,7 @@
   <link href="https://huckops.github.io/atom.xml" rel="self"/>
   
   <link href="https://huckops.github.io/"/>
-  <updated>2022-03-28T14:17:26.984Z</updated>
+  <updated>2022-04-05T05:59:32.328Z</updated>
   <id>https://huckops.github.io/</id>
   
   <author>
@@ -17,15 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>发布工程</title>
     <link href="https://huckops.github.io/2022/03/28/SRE%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%8F%91%E5%B8%83%E5%B7%A5%E7%A8%8B/"/>
     <id>https://huckops.github.io/2022/03/28/SRE%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%8F%91%E5%B8%83%E5%B7%A5%E7%A8%8B/</id>
-    <published>2022-03-28T14:17:26.984Z</published>
-    <updated>2022-03-28T14:17:26.984Z</updated>
+    <published>2022-03-28T14:17:34.000Z</published>
+    <updated>2022-04-05T05:59:32.328Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><p>对于大型生产环境和复杂的业务系统来说，发布应用或者变更并不是简单的在服务器上运行二进制包或者脚本就可以了，这样很不便于服务的管理，且服务的稳定性也无法保障，所以就会有发布工程这一说法。</p><h1 id="发布工程要素"><a href="#发布工程要素" class="headerlink" title="发布工程要素"></a>发布工程要素</h1><h2 id="自给自足的发布"><a href="#自给自足的发布" class="headerlink" title="自给自足的发布"></a>自给自足的发布</h2><p>对于每个研发团队来说，都需要有一个相对应的发布工程师，发布工程师指定发布策略，编写发布工具，指定发布流程。</p><h2 id="追求速度"><a href="#追求速度" class="headerlink" title="追求速度"></a>追求速度</h2><p>当发布频繁时，每个版本之间的变更将减少。这样能减小新版本上线侯的测试和调试成本。对于项目可以高频次构建，然后在多次构建中选择一个构建版本进行发布（条件：需要是所有测试都通过的版本）。</p><h2 id="密闭性"><a href="#密闭性" class="headerlink" title="密闭性"></a>密闭性</h2><p>每一次构建的产物，都不能因为构建环境差异导致构建差异。所有依赖在构建过程要自包含。</p><p>当构建在生产环境中出现bug时，按照之前的源码版本，加入新的改动之后生成新的构建（即向repo推送fix的commit）。构建的编译环境会被包含到repo中（显然有些不可能，所以最佳做法应该时在repo中保存编译器版本等环境信息），这样能保证每次构建环境都是相同的。</p><h1 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h1><p>对于变更发布，一般需要遵循一下流程：</p><ol><li>提交代码到repo，提mr，进行review</li><li>指定流程中的动作</li><li>创建新发布版</li><li>批准集成，即合并mr</li><li>部署发布版</li><li>修改项目配置文件</li></ol><h1 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h1><h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>构建目标应该被定义在配置文件中，如常用的configure文件。可以指定构建的参数及属性。</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>常用的分支管理与google有一些出入。项目变更通常会推送到开发分支，开发分支变更经review和审计之后被合并到发布分支上进行发布，由此可以清楚看出每次合并的变更信息。</p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>开发分支提交变更后即执行单元测试。以分支的构建结果和测试结果作为指定发布版本的依据。通常可以使用最后一次成功构建和测试通过的版本进行发布。</p><p>发布过程中要进行全部的单元测试，防止开发分支不包含某些发布分支的代码出现未测到的问题。同样要保证最后一次测试通过。</p><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>对构建成果进行打包，可以使用构建得出的hash和构建标签进行打标签，加入签名以保证打包的完整性（可以使用MD5）。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>一个发布时的组成时一个或者多个任务组成的逻辑工作单元（可以理解为微服务）。自动发布系统可以用构建时的build tag进行自动化部署（指定发布版本）。对于大型项目部署速度通常时指数型的，即灰度发布。</p><h1 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h1><p>项目配置需要为一致的，所以可以将配置文件存放到项目的repo中，同样进行代码审计。在打包时可以将配置文件一起进行打包，降低部署的难度，但是同样会带来一些问题，比如配置的灵活性下降。可以将配置文件存放于外部存储上，每次发布从外部存储上读取配置文件，从而提高配置的灵活度。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;发布&quot;&gt;&lt;a href=&quot;#发布&quot; class=&quot;headerlink&quot; title=&quot;发布&quot;&gt;&lt;/a&gt;发布&lt;/h1&gt;&lt;p&gt;对于大型生产环境和复杂的业务系统来说，发布应用或者变更并不是简单的在服务器上运行二进制包或者脚本就可以了，这样很不便于服务的管理，且服务的稳</summary>
+      
     
     
     
+    <category term="架构" scheme="https://huckops.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
     
+    
+    <category term="SRE" scheme="https://huckops.github.io/tags/SRE/"/>
     
   </entry>
   
