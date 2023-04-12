@@ -4,8 +4,10 @@
   <url>
     <loc>http://www.huckops.xyz/2022/03/28/SRE%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%8F%91%E5%B8%83%E5%B7%A5%E7%A8%8B/</loc>
     
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-05-14</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -13,6 +15,8 @@
     
     <lastmod>2022-03-27</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -20,6 +24,8 @@
     
     <lastmod>2022-02-11</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -27,6 +33,8 @@
     
     <lastmod>2021-11-20</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -34,6 +42,8 @@
     
     <lastmod>2021-10-05</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -41,6 +51,8 @@
     
     <lastmod>2021-10-05</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -48,6 +60,8 @@
     
     <lastmod>2021-10-05</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -55,6 +69,8 @@
     
     <lastmod>2021-10-04</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -62,6 +78,8 @@
     
     <lastmod>2021-10-03</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -69,6 +87,8 @@
     
     <lastmod>2021-09-12</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -76,6 +96,8 @@
     
     <lastmod>2021-09-12</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -83,6 +105,8 @@
     
     <lastmod>2021-09-11</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -90,59 +114,61 @@
     
     <lastmod>2021-09-11</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
 
   <url>
     <loc>http://www.huckops.xyz/</loc>
-    <lastmod>2022-05-02</lastmod>
+    <lastmod>2023-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>http://www.huckops.xyz/tags/SRE/</loc>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.huckops.xyz/tags/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.huckops.xyz/tags/CMDB%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huckops.xyz/tags/SRE/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 
   
   <url>
+    <loc>http://www.huckops.xyz/categories/%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.huckops.xyz/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.huckops.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huckops.xyz/categories/%E6%9E%B6%E6%9E%84/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 </urlset>
